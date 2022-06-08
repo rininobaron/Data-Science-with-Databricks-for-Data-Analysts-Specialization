@@ -22,25 +22,25 @@ target_path = current_path[:-15]
 
 directories = []
 
- 
-rootdir = os.getcwd()
-counter_not_git = 0
-counter_target_paths = 0
 for path in os.walk(target_path):
     #print(path[0])
     if path[0][87:91] != '.git':
-        counter_not_git += 1
-        if counter_not_git == 0:
-            pass
-        elif path[0][87:101] == 'EXTRA_FUNCTION':
-            pass
-        else:
-            counter_target_paths += 1
-            print(path[0])
-    # if path[1].is_dir():
-    #     print(path)
+        #print(path[0])
+        directories.append(path[0])
 
-# for path in directories:
-#     files = os.listdir(path)
-#     if file[-5:] == '.html':
-#         HTML(i).write_pdf(i[:-5] + '.pdf', stylesheets=[css])
+# Remove unnecessary directories 
+directories.remove(directories[0])                  # FIRST ELEMENT
+directories.remove(directories[0])                  # FIRST ELEMENT AGAIN
+directories.remove(directories[len(directories)-1]) # LAST ELEMENT
+# print()
+# for i in directories:
+#     print(i)
+
+for path in directories:
+    print()
+    files = os.listdir(path)
+    for file in files:
+        path_file = path + '/' + file
+        print(path_file)
+        if file[-5:] == '.html':
+            HTML(path_file).write_pdf(file[:-5] + '.pdf', stylesheets=[css])
