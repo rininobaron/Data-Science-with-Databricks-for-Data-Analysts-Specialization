@@ -1,6 +1,8 @@
 # Data-Science-with-Databricks-for-Data-Analysts-Specialization (COURSERA)
 
-I recommend that you clone the full repository on your loca machine in order to visualize the html files in any web browser that you prefer.
+This repository contains the interactive notebooks for Databricks platform in html format and pdf files in order to vidsualize the notebook in GitHub.
+
+You can add the notebooks to your Databricks account using the bottom lcated in the right up corner when you visualize the notebook in any web browser.  
 
 Good luck!
 
